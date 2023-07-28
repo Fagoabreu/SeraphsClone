@@ -59,9 +59,8 @@ public class EnemyAI : MonoBehaviour
 
     private void move() {
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        //float moveDistance = Mathf.Pow((distanceToPlayer - height + 2) * 0.017f, 3);
-        float moveDistance = 1 * Time.deltaTime;
-
+        float moveDistance = Mathf.Pow((distanceToPlayer - height + 2) * 0.017f, 3);
+        
         if (transform.position.y > height) {
             transform.position = new Vector3(transform.position.x, transform.position.y - moveDistance, 0);
         } else if (transform.position.y < height - 1) {
